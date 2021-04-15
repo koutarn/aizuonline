@@ -4,12 +4,22 @@ using namespace std;
 
 int main()
 {
-    int num,input,min,max;
-    long sum;
+    int num;
+    long input,min,max;
+    long long sum;
+    sum = 0;
     cin >> num;
 
     for(int i = 0; i < num;i++){
         cin >> input;
+        sum += input;
+
+        if (i == 0){
+            min = input;
+            max = input;
+            continue;
+        }
+
         if (min > input ){
             min = input;
         }
@@ -18,10 +28,9 @@ int main()
             max = input;
         }
 
-        sum += input;
     }
 
-    printf("%d %d %ld",min,max,sum);
+    printf("%ld %ld %ld\n",min,max,sum);
 
     return 0;
 }
